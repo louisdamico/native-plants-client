@@ -38,6 +38,7 @@ This application is a Native plant field guide designed for professionals and a 
 - HTML
 - CSS/SCSS
 - Javascript
+- Bootstrap
 - PHP
 
 
