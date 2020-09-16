@@ -64,6 +64,3 @@ This application is a Native plant field guide designed for professionals and a 
 
 #### Wireframes:
 <a href="https://imgur.com/9gEaUvw"><img src="https://i.imgur.com/9gEaUvw.png" title="source: imgur.com" /></a>
-
-#### Gantt Chart:
-<a href="https://imgur.com/zYmi1hj"><img src="https://i.imgur.com/zYmi1hj.png" title="source: imgur.com" /></a>
