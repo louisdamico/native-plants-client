@@ -5,7 +5,7 @@ This application is a Native plant field guide designed for professionals and a 
 ## Important Links
 
 - [Deployed Client]
-- [Api Repo]
+- [Api Repo]https://louisdamico.github.io/native-plants-api/
 - [Deployed API]
 - [Gantt Chart](https://docs.google.com/spreadsheets/d/1hUHYbxF8i37bEgrGfgN9qWebLXFGVB-AdIgRZn4mn1o/edit?usp=sharing)
 
@@ -39,20 +39,6 @@ This application is a Native plant field guide designed for professionals and a 
 - CSS/SCSS
 - Javascript
 - PHP
-
-### Catalog of Routes
-
-| Verb   | URI Pattern            |
-|--------|------------------------|
-| POST   | `/posts/:id/comments`  |
-| PATCH  | `/posts/:id/comments/:commentid` |
-| DELETE | `/posts/:id/comments/:commentid` |
-| GET      | `/posts`        |
-| GET      | `/posts/:id`|
-| POST     | `/posts`|
-| PATCH    | `/posts/:id`|
-| DELETE  | `/posts/:id`|
-
 
 
 ### Unsolved Problems
