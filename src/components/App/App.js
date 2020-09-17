@@ -7,6 +7,8 @@ import Header from '../Header/Header'
 import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
+import Favorite from '../routes/Favorite'
+import FavoriteCreate from '../routes/FavoriteCreate'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
 class App extends Component {
@@ -54,6 +56,12 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
+          <AuthenticatedRoute user={user} exact path='/favorites' render={ () => (
+            <Favorite user={user} />
+          )}/>
+          <AuthenticatedRoute user={user} exact path='/favorites-create' render={ () => (
+            <FavoriteCreate user={user} msgAlert={this.msgAlert} setCreatedId={this.setCreatedId}/>
+          )}/>
         </main>
       </Fragment>
     )
