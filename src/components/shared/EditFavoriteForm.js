@@ -4,11 +4,11 @@ import Form from 'react-bootstrap/Form'
 // import Button from 'react-bootstrap/Button'
 import OutlineButton from 'react-bootstrap/Button'
 
-const FavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
+const EditFavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5">
-      <h3>New List:</h3>
-      <Form onSubmit={handleSubmit}>
+      <h3>Edit List:</h3>
+      <Form onSubmit={handleSubmit} required>
         <Form.Group controlId="state-category" onChange={handleChange} value={favorite.state}>
           <Form.Label>State</Form.Label>
           <Form.Control as="select" name="state" defaultValue={favorite.state} required>
@@ -40,6 +40,7 @@ const FavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
             <option value="East Central Texas Plains">East Central Texas Plains</option>
             <option value="Western Gulf Coastal Plain">Western Gulf Coastal Plain</option>
             <option value="South Central Plains">South Central Plains</option>
+
           </Form.Control>
         </Form.Group>
         <Form.Group controlId="type-category" onChange={handleChange} value={favorite.type}>
@@ -64,9 +65,9 @@ const FavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
           name='common_name'
           onChange={handleChange}
         /> <br/>
-        <OutlineButton variant='outline-primary' type="submit">Create New List</OutlineButton>
+        <OutlineButton variant= "outline-warning" type='submit' onClick={this.FavoriteEdit}>Edit List</OutlineButton>
       </Form>
     </div>
   </div>
 )
-export default FavoriteForm
+export default EditFavoriteForm

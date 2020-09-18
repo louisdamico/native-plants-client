@@ -30,14 +30,6 @@ class FavoriteCreate extends Component {
       return { favorite: editedPost }
     })
   }
-  //  const handleCheckbox = event => {
-  //   event.persist()
-  //   if (favorite.state === false) {
-  //     setFavorite({ ...favorite, createdId: true })
-  //   } else {
-  //     setFavorite({ ...favorite, createdId: false })
-  //   }
-  // }
 
   handleSubmit = event => {
     event.preventDefault()

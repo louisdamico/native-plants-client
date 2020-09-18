@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
-// import OutlineButton from '../shared/OutlineButton.js'
+// import { Redirect } from 'react-router-dom'
+// import OutlineButton from 'react-bootstrap/Button'
+import Dropdown from 'react-bootstrap/Dropdown'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import { withRouter } from 'react-router'
+import messages from '../AutoDismissAlert/messages'
 
 class Favorite extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      favorite: []
+      favorite: [],
+      deleted: false
     }
   }
 
@@ -22,6 +25,23 @@ class Favorite extends Component {
       }
     })
       .then(res => this.setState({ favorite: res.data.favorite }))
+      // .then(console.log(this.props.data))
+      .catch(console.error)
+  }
+  destroyList = () => {
+    axios({
+      url: `${apiUrl}/favorites/${this.props.match.params.id}/`,
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Token ${this.props.user.token}`
+      }
+    })
+      .then(() => this.setState({ deleted: true }))
+      .then(res => this.props.msgAlert({
+        heading: 'List Deleted Successfully',
+        message: messages.ListDeleteSuccess,
+        variant: 'success'
+      }))
       .catch(console.error)
   }
 
@@ -30,11 +50,19 @@ class Favorite extends Component {
     if (this.state.favorite) {
       const favorite = this.state.favorite.map(favorite => (
         <div key={favorite.id}>
-          <h4> Client List </h4>
-          {favorite.state}
-          {favorite.ecoregion}
-          {favorite.type}
-          {favorite.common_name}
+          <h4> List: </h4>
+          {favorite.state}<br/>
+          {favorite.ecoregion}<br/>
+          {favorite.type}:<br/>
+          {favorite.common_name}<br/>
+          <Dropdown>
+            <Dropdown.Toggle variant="outline-danger" id="dropdown-basic">
+              Delete List
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={this.destroyList}> 🛑  Permently Delete🛑</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
       ))
       return favorite
@@ -49,3 +77,6 @@ class Favorite extends Component {
 }
 
 export default withRouter(Favorite)
+
+// <OutlineButton variant='outline-warning' component={ Redirect } exact path='/favorite-edit'>Edit List</OutlineButton>
+// <OutlineButton variant= "outline-danger" onClick={this.destroyList}>Delete List</OutlineButton>

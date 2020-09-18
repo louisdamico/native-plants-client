@@ -6,6 +6,9 @@ export default {
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
   changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
-  favoriteCreatedSuccess: 'Succesfully added to your list',
-  favoriteCreatedFailure: 'Failed to add to your list'
+  favoriteCreatedSuccess: 'Succesfully added to your list.',
+  favoriteCreatedFailure: 'All forms must be selected.',
+  ListDeleteSuccess: 'Create a new list. 📝',
+  listEditedSuccess: '👍 List updated.',
+  listEditFailure: '😩 Failed to update your list.'
 }

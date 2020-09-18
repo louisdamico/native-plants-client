@@ -8,6 +8,7 @@ import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import Favorite from '../routes/Favorite'
+import FavoriteEdit from '../routes/FavoriteEdit'
 import FavoriteCreate from '../routes/FavoriteCreate'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
@@ -62,6 +63,13 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/favorites-create' render={ () => (
             <FavoriteCreate user={user} msgAlert={this.msgAlert} setCreatedId={this.setCreatedId}/>
           )}/>
+          <AuthenticatedRoute user={user} exact path='/favorites-edit' render={ (props) => (
+            <FavoriteEdit {...props} user={user} msgAlert={this.msgAlert} setUpdated={this.setUpdated}/>
+          )}/>
+          <AuthenticatedRoute user={user} exact path='/favorites' render={ (props) => (
+            <Favorite {...props} user={user} msgAlert={this.msgAlert} setDeleted={this.setDeleted}/>
+          )}/>
+
         </main>
       </Fragment>
     )
