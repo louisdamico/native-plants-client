@@ -42,7 +42,7 @@ class FavoriteCreate extends Component {
       },
       data: { favorite: this.state.favorite }
     })
-      // .then(res => console.log(res.data))
+      // .then(res => console.log(this.state.favorite))
       .then(res => {
         this.props.msgAlert({
           heading: 'Favorite Created Successfully',

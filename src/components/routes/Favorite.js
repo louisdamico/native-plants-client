@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import { Redirect } from 'react-router-dom'
-// import OutlineButton from 'react-bootstrap/Button'
+import { Redirect } from 'react-router-dom'
+import OutlineButton from 'react-bootstrap/Button'
 import Dropdown from 'react-bootstrap/Dropdown'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
@@ -55,6 +55,7 @@ class Favorite extends Component {
           {favorite.ecoregion}<br/>
           {favorite.type}:<br/>
           {favorite.common_name}<br/>
+          <OutlineButton variant='outline-primary' onClick={ Redirect } to={`/favorites/${this.props.match.params.id}`}>See List</OutlineButton>
           <Dropdown>
             <Dropdown.Toggle variant="outline-danger" id="dropdown-basic">
               Delete List
@@ -67,9 +68,10 @@ class Favorite extends Component {
       ))
       return favorite
     }
+    // return <Redirect to='/favorites-create' />
     return (
       <div className='long'>
-        <h1>Favorites</h1>
+        <h1>Create New List</h1>
         {favorite}
       </div>
     )
@@ -78,5 +80,5 @@ class Favorite extends Component {
 
 export default withRouter(Favorite)
 
-// <OutlineButton variant='outline-warning' component={ Redirect } exact path='/favorite-edit'>Edit List</OutlineButton>
+// onClick={() => this.destroyList(favorite.id)}
 // <OutlineButton variant= "outline-danger" onClick={this.destroyList}>Delete List</OutlineButton>
