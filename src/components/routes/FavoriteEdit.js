@@ -91,3 +91,5 @@ class FavoriteEdit extends Component {
 }
 
 export default withRouter(FavoriteEdit)
+
+// .then(() => this.props.history.push('/'))

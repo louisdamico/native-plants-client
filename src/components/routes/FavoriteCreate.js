@@ -20,6 +20,7 @@ class FavoriteCreate extends Component {
       createdId: null
     }
   }
+
   handleChange = event => {
     event.persist()
 
@@ -41,6 +42,7 @@ class FavoriteCreate extends Component {
       },
       data: { favorite: this.state.favorite }
     })
+      // .then(res => console.log(res.data))
       .then(res => {
         this.props.msgAlert({
           heading: 'Favorite Created Successfully',
@@ -49,7 +51,7 @@ class FavoriteCreate extends Component {
         })
         return res
       })
-      .then(res => this.setState({ createdId: res.data.favorite._id }))
+      .then(res => this.setState({ createdId: res.data.favorite.id }))
       .catch(res => this.props.msgAlert({
         heading: 'Favorite Create Failed',
         message: messages.favoriteCreatedFailure,

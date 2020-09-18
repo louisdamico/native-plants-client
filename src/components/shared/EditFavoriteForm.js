@@ -8,7 +8,7 @@ const EditFavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) 
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5">
       <h3>Edit List:</h3>
-      <Form onSubmit={handleSubmit} required>
+      <Form onSubmit={handleSubmit}required>
         <Form.Group controlId="state-category" onChange={handleChange} value={favorite.state}>
           <Form.Label>State</Form.Label>
           <Form.Control as="select" name="state" defaultValue={favorite.state} required>

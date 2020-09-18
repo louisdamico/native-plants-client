@@ -64,7 +64,7 @@ const FavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
           name='common_name'
           onChange={handleChange}
         /> <br/>
-        <OutlineButton variant='outline-primary' type="submit">Create New List</OutlineButton>
+        <OutlineButton variant='outline-primary' type="submit" >Create New List</OutlineButton>
       </Form>
     </div>
   </div>
