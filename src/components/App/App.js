@@ -62,7 +62,7 @@ class App extends Component {
             <Favorite user={user} />
           )}/>
           <AuthenticatedRoute user={user} exact path='/favorites-create' render={ () => (
-            <FavoriteCreate user={user} msgAlert={this.msgAlert} setUpdated={this.setUpdated} setCreatedId={this.setCreatedId}/>
+            <FavoriteCreate user={user} msgAlert={this.msgAlert} setCreatedId={this.setCreatedId}/>
           )}/>
           <AuthenticatedRoute user={user} exact path='/favorites-edit/:id' render={ (props) => (
             <FavoriteEdit {...props} user={user} msgAlert={this.msgAlert} setUpdated={this.setUpdated}/>
@@ -71,7 +71,7 @@ class App extends Component {
             <Favorite {...props} user={user} msgAlert={this.msgAlert}/>
           )}/>
           <AuthenticatedRoute user={user} exact path='/favorites/:id' render={ (props) => (
-            <FavoriteOne {...props} user={user} msgAlert={this.msgAlert} setCreated={this.setCreated} setDeleted={this.setDeleted}/>
+            <FavoriteOne {...props} user={user} msgAlert={this.msgAlert} setDeleted={this.setDeleted}/>
           )}/>
         </main>
       </Fragment>

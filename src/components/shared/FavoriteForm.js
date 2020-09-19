@@ -8,16 +8,16 @@ const FavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5">
       <h3>Make New List:</h3>
-      <label>List Name</label><br/>
-      <input
-        placeholder='type list name'
-        value={favorite.list_name}
-        required
-        name='list_name'
-        onChange={handleChange}
-      /> <br/>
       <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="state-category" onChange={handleChange} value={favorite.state}>
+        <label>List Name</label><br/>
+        <input
+          placeholder='type list name'
+          value={favorite.list_name}
+          required
+          name='list_name'
+          onChange={handleChange}
+        /> <br/>
+        <Form.Group controlId="state-category" onChange={handleChange} value={favorite.state} required>
           <Form.Label>State</Form.Label>
           <Form.Control as="select" name="state" defaultValue={favorite.state} required>
             <option value="" disabled hidden>Select State</option>
@@ -30,8 +30,6 @@ const FavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
             <option value="TX">TX</option>
           </Form.Control>
         </Form.Group>
-      </Form>
-      <Form onSubmit={handleSubmit}>
         <Form.Group controlId="ecoregion-category" onChange={handleChange} value={favorite.ecoregion}>
           <Form.Label>EcoRegion</Form.Label>
           <Form.Control as="select" name="ecoregion" defaultValue={favorite.ecoregion} required>

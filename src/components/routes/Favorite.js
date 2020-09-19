@@ -31,10 +31,10 @@ class Favorite extends Component {
       const favorite = this.state.favorite.map(favorite => (
         <div key={favorite.id}>
           <h4>{favorite.list_name}:</h4>
-          {favorite.state}<br/>
-          {favorite.ecoregion}<br/>
-          {favorite.type}:<br/>
-          {favorite.common_name}<br/>
+          <p>State: {favorite.state}</p>
+          <p>EcoRegion: {favorite.ecoregion}</p>
+          <p>Species: {favorite.type}</p>
+          <p>Common Name: {favorite.common_name}</p>
           <Link to={`/favorites/${favorite.id}`}>
             <OutlineButton variant='outline-primary' type="button">See List</OutlineButton></Link>
         </div>

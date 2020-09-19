@@ -6,11 +6,12 @@ const EditFavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) 
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5">
       <h3>Edit List:</h3>
-      <Form onSubmit={handleSubmit}required>
+      <h4>{favorite.list_name}</h4>
+      <Form onSubmit={handleSubmit}>
         <Form.Group controlId="state-category" onChange={handleChange} value={favorite.state}>
           <Form.Label>State</Form.Label>
-          <Form.Control as="select" name="state" defaultValue={favorite.state} required>
-            <option value="" disabled hidden>Select State</option>
+          <Form.Control as="select" name="state" defaultValue={favorite.state}>
+            <option value="" disabled hidden>Select New State</option>
             <option value="AZ">AZ</option>
             <option value="CO">CO</option>
             <option value="IN">IN</option>
@@ -24,8 +25,8 @@ const EditFavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) 
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="ecoregion-category" onChange={handleChange} value={favorite.ecoregion}>
           <Form.Label>EcoRegion</Form.Label>
-          <Form.Control as="select" name="ecoregion" defaultValue={favorite.ecoregion} required>
-            <option value="" disabled hidden>Select EcoRegion</option>
+          <Form.Control as="select" name="ecoregion" defaultValue={favorite.ecoregion} >
+            <option value="" disabled hidden>Select New EcoRegion</option>
             <option value="Chihuahuan Desert">Chihuahuan Desert</option>
             <option value="Arizona/New Mexico">Arizona/New Mexico</option>
             <option value="High Plains">High Plains</option>
@@ -42,8 +43,8 @@ const EditFavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) 
         </Form.Group>
         <Form.Group controlId="type-category" onChange={handleChange} value={favorite.type}>
           <Form.Label>Species</Form.Label>
-          <Form.Control as="select" name="type" defaultValue={favorite.type} required>
-            <option value="" disabled hidden>Select Species</option>
+          <Form.Control as="select" name="type" defaultValue={favorite.type} >
+            <option value="" disabled hidden>Select New Species</option>
             <option value="Trees">Trees</option>
             <option value="Conifers">Conifers</option>
             <option value="Shrubs">Shrubs</option>
@@ -54,11 +55,10 @@ const EditFavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) 
             <option value="Other">Other</option>
           </Form.Control>
         </Form.Group>
-        <label>Common Name</label><br/>
+        <label>New Common Name</label><br/>
         <input
           placeholder='type common name'
           value={favorite.common_name}
-          required
           name='common_name'
           onChange={handleChange}
         /> <br/>
