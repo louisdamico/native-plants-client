@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 // import Button from 'react-bootstrap/Button'
 import OutlineButton from 'react-bootstrap/Button'
@@ -71,6 +71,8 @@ const FavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
           onChange={handleChange}
         /> <br/>
         <OutlineButton variant='outline-primary' type="submit">Create New List</OutlineButton>
+        <Link to={'/favorites'}>
+          <OutlineButton variant='outline-secondary' type="button">Cancel</OutlineButton></Link>
       </Form>
     </div>
   </div>

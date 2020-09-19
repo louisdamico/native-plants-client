@@ -42,20 +42,24 @@ class FavoriteOne extends Component {
         message: messages.ListDeleteSuccess,
         variant: 'success'
       }))
-      .then(() => { return <Redirect to='/favorites'/> })
       .catch(console.error)
   }
 
   render () {
+    if (this.state.deleted) {
+      return <Redirect to={ '/favorites'
+      } />
+    }
+
     let favorite = ''
     if (this.state.favorite) {
       favorite = (
         <div key={this.state.favorite.id}>
           <h4>{this.state.favorite.list_name}</h4><br/>
-          {this.state.favorite.state}<br/>
-          {this.state.favorite.ecoregion}<br/>
-          {this.state.favorite.type}:<br/>
-          {this.state.favorite.common_name}<br/>
+          <h5>State: </h5>{this.state.favorite.state}<br/>
+          <h5>EcoRegion: </h5>{this.state.favorite.ecoregion}<br/>
+          <h5>Species: </h5>{this.state.favorite.type}<br/>
+          <h5>Common Name: </h5>{this.state.favorite.common_name}<br/>
           <Link to={`/favorites-edit/${this.props.match.params.id}`}>
             <OutlineButton variant='outline-primary' type="button">Edit List</OutlineButton></Link>
           <Link to={'/favorites'}>

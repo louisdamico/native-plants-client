@@ -58,9 +58,6 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/favorites' render={ () => (
-            <Favorite user={user} />
-          )}/>
           <AuthenticatedRoute user={user} exact path='/favorites-create' render={ () => (
             <FavoriteCreate user={user} msgAlert={this.msgAlert} setCreatedId={this.setCreatedId}/>
           )}/>
