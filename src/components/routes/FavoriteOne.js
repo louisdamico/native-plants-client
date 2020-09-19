@@ -51,7 +51,7 @@ class FavoriteOne extends Component {
     if (this.state.favorite) {
       favorite = (
         <div key={this.state.favorite.id}>
-          <h4> List: </h4>
+          <h4>{this.state.favorite.list_name}</h4><br/>
           {this.state.favorite.state}<br/>
           {this.state.favorite.ecoregion}<br/>
           {this.state.favorite.type}:<br/>

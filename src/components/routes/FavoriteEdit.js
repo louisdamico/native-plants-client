@@ -12,6 +12,7 @@ class FavoriteEdit extends Component {
 
     this.state = {
       favorite: {
+        list_name: '',
         state: '',
         ecoregion: '',
         type: '',

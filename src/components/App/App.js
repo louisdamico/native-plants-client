@@ -62,7 +62,7 @@ class App extends Component {
             <Favorite user={user} />
           )}/>
           <AuthenticatedRoute user={user} exact path='/favorites-create' render={ () => (
-            <FavoriteCreate user={user} msgAlert={this.msgAlert} setCreatedId={this.setCreatedId}/>
+            <FavoriteCreate user={user} msgAlert={this.msgAlert} setUpdated={this.setUpdated} setCreatedId={this.setCreatedId}/>
           )}/>
           <AuthenticatedRoute user={user} exact path='/favorites-edit/:id' render={ (props) => (
             <FavoriteEdit {...props} user={user} msgAlert={this.msgAlert} setUpdated={this.setUpdated}/>

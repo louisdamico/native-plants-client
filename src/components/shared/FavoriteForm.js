@@ -7,7 +7,15 @@ import OutlineButton from 'react-bootstrap/Button'
 const FavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5">
-      <h3>New List:</h3>
+      <h3>Make New List:</h3>
+      <label>List Name</label><br/>
+      <input
+        placeholder='type list name'
+        value={favorite.list_name}
+        required
+        name='list_name'
+        onChange={handleChange}
+      /> <br/>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="state-category" onChange={handleChange} value={favorite.state}>
           <Form.Label>State</Form.Label>
@@ -64,7 +72,7 @@ const FavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
           name='common_name'
           onChange={handleChange}
         /> <br/>
-        <OutlineButton variant='outline-primary' type="submit" >Create New List</OutlineButton>
+        <OutlineButton variant='outline-primary' type="submit">Create New List</OutlineButton>
       </Form>
     </div>
   </div>

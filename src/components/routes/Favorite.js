@@ -22,7 +22,6 @@ class Favorite extends Component {
       }
     })
       .then(res => this.setState({ favorite: res.data.favorite }))
-      // .then(console.log(this.props.data))
       .catch(console.error)
   }
 
@@ -31,7 +30,7 @@ class Favorite extends Component {
     if (this.state.favorite) {
       const favorite = this.state.favorite.map(favorite => (
         <div key={favorite.id}>
-          <h4> List: </h4>
+          <h4>{favorite.list_name}:</h4>
           {favorite.state}<br/>
           {favorite.ecoregion}<br/>
           {favorite.type}:<br/>
