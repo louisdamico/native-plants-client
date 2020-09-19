@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import OutlineButton from 'react-bootstrap/Button'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import { withRouter } from 'react-router'
-// import messages from '../AutoDismissAlert/messages'
+import Dropdown from 'react-bootstrap/Dropdown'
+import messages from '../AutoDismissAlert/messages'
 
 class FavoriteOne extends Component {
   constructor (props) {
@@ -27,6 +28,23 @@ class FavoriteOne extends Component {
       .then(res => this.setState({ favorite: res.data.favorite }))
       .catch(console.error)
   }
+  destroyList = () => {
+    axios({
+      url: `${apiUrl}/favorites/${this.props.match.params.id}/`,
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Token ${this.props.user.token}`
+      }
+    })
+      .then(() => this.setState({ deleted: true }))
+      .then(res => this.props.msgAlert({
+        heading: 'List Deleted Successfully',
+        message: messages.ListDeleteSuccess,
+        variant: 'success'
+      }))
+      .then(() => { return <Redirect to='/favorites'/> })
+      .catch(console.error)
+  }
 
   render () {
     let favorite = ''
@@ -38,7 +56,18 @@ class FavoriteOne extends Component {
           {this.state.favorite.ecoregion}<br/>
           {this.state.favorite.type}:<br/>
           {this.state.favorite.common_name}<br/>
-          <OutlineButton variant='outline-index' type="submit" onClick= { Redirect } to='/favorite-edit/:id'>Edit List</OutlineButton>
+          <Link to={`/favorites-edit/${this.props.match.params.id}`}>
+            <OutlineButton variant='outline-primary' type="button">Edit List</OutlineButton></Link>
+          <Link to={'/favorites'}>
+            <OutlineButton variant='outline-secondary' type="button">Cancel</OutlineButton></Link>
+          <Dropdown>
+            <Dropdown.Toggle variant="outline-danger" id="dropdown-basic">
+              Delete List
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={this.destroyList}>🛑  Permently Delete 🛑</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
       )
     }

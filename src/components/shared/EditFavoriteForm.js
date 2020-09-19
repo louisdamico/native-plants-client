@@ -1,9 +1,7 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
-// import Button from 'react-bootstrap/Button'
 import OutlineButton from 'react-bootstrap/Button'
-// import Dropdown from 'react-bootstrap/Dropdown'
 const EditFavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
   <div className="row">
     <div className="col-sm-10 col-md-8 mx-auto mt-5">
@@ -40,7 +38,6 @@ const EditFavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) 
             <option value="East Central Texas Plains">East Central Texas Plains</option>
             <option value="Western Gulf Coastal Plain">Western Gulf Coastal Plain</option>
             <option value="South Central Plains">South Central Plains</option>
-
           </Form.Control>
         </Form.Group>
         <Form.Group controlId="type-category" onChange={handleChange} value={favorite.type}>
@@ -66,17 +63,10 @@ const EditFavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) 
           onChange={handleChange}
         /> <br/>
         <OutlineButton variant= "outline-warning" type='submit' onClick={this.FavoriteEdit}>Edit List</OutlineButton>
+        <Link to={'/favorites'}>
+          <OutlineButton variant='outline-secondary' type="button">Cancel</OutlineButton></Link>
       </Form>
     </div>
   </div>
 )
 export default EditFavoriteForm
-
-// <Dropdown>
-//   <Dropdown.Toggle variant="outline-danger" id="dropdown-basic">
-//     Delete List
-//   </Dropdown.Toggle>
-//   <Dropdown.Menu>
-//     <Dropdown.Item onClick={this.destroyList}> 🛑  Permently Delete🛑</Dropdown.Item>
-//   </Dropdown.Menu>
-// </Dropdown>

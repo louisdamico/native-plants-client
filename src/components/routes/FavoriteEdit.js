@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import EditFavoriteForm from '../shared/EditFavoriteForm'
-// import Favorite from '../shared/Favorite'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import { withRouter } from 'react-router'
@@ -67,13 +66,10 @@ class FavoriteEdit extends Component {
   }
 
   render () {
-    // destructure book to show in the form below, and createdId to redirect
     const { favorite, updated } = this.state
     const { handleChange, handleSubmit } = this
 
-    // when the user hits submit to finish editing the book
     if (updated) {
-      // redirect to the show page (route)
       return <Redirect to={`/favorites/${this.props.match.params.id}/`} />
     }
 

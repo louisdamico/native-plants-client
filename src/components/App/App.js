@@ -68,10 +68,10 @@ class App extends Component {
             <FavoriteEdit {...props} user={user} msgAlert={this.msgAlert} setUpdated={this.setUpdated}/>
           )}/>
           <AuthenticatedRoute user={user} exact path='/favorites' render={ (props) => (
-            <Favorite {...props} user={user} msgAlert={this.msgAlert} setDeleted={this.setDeleted}/>
+            <Favorite {...props} user={user} msgAlert={this.msgAlert}/>
           )}/>
           <AuthenticatedRoute user={user} exact path='/favorites/:id' render={ (props) => (
-            <FavoriteOne {...props} user={user} msgAlert={this.msgAlert} setCreated={this.setCreated}/>
+            <FavoriteOne {...props} user={user} msgAlert={this.msgAlert} setCreated={this.setCreated} setDeleted={this.setDeleted}/>
           )}/>
         </main>
       </Fragment>
