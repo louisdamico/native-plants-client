@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import Card from 'react-bootstrap/Card'
 import OutlineButton from 'react-bootstrap/Button'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
@@ -30,19 +31,26 @@ class Favorite extends Component {
     if (this.state.favorite) {
       const favorite = this.state.favorite.map(favorite => (
         <div key={favorite.id}>
-          <h4>{favorite.list_name}:</h4>
-          <h5>State: </h5>{favorite.state}<br/>
-          <h5>EcoRegion: </h5>{favorite.ecoregion}<br/>
-          <h5>Species: </h5>{favorite.type}<br/>
-          <h5>Common Name: </h5>{favorite.common_name}<br/>
-          <Link to={`/favorites/${favorite.id}`}>
-            <OutlineButton variant='outline-primary' type="button">See List</OutlineButton></Link>
+          <Card border="info" style={{ width: '18rem' }}>
+            <Card.Header><h4>{favorite.list_name}</h4></Card.Header>
+            <Card.Body>
+              <Card.Title></Card.Title>
+              <Card.Text>
+                <h5>State: </h5>{favorite.state}<br/>
+                <h5>EcoRegion: </h5>{favorite.ecoregion}<br/>
+                <h5>Species: </h5>{favorite.type}<br/>
+                <h5>Common Name: </h5>{favorite.common_name}<br/>
+              </Card.Text>
+              <Link to={`/favorites/${favorite.id}`}>
+                <OutlineButton variant='outline-primary' type="button">See List</OutlineButton></Link>
+            </Card.Body>
+          </Card>
         </div>
       ))
       return favorite
     }
     return (
-      <div className='long'>
+      <div className='Card'>
         <h1>Create New List</h1>
         {favorite}
       </div>

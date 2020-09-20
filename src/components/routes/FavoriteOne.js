@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import Card from 'react-bootstrap/Card'
+import Dropdown from 'react-bootstrap/Dropdown'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import OutlineButton from 'react-bootstrap/Button'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import { withRouter } from 'react-router'
-import Dropdown from 'react-bootstrap/Dropdown'
+// import Typography from '@material-ui/core/Typography';
+
 import messages from '../AutoDismissAlert/messages'
 
 class FavoriteOne extends Component {
@@ -55,30 +61,40 @@ class FavoriteOne extends Component {
     if (this.state.favorite) {
       favorite = (
         <div key={this.state.favorite.id}>
-          <h4>{this.state.favorite.list_name}</h4><br/>
-          <h5>State: </h5>{this.state.favorite.state}<br/>
-          <h5>EcoRegion: </h5>{this.state.favorite.ecoregion}<br/>
-          <h5>Species: </h5>{this.state.favorite.type}<br/>
-          <h5>Common Name: </h5>{this.state.favorite.common_name}<br/>
-          <Link to={`/favorites-edit/${this.props.match.params.id}`}>
-            <OutlineButton variant='outline-primary' type="button">Edit List</OutlineButton></Link>
-          <Link to={'/favorites'}>
-            <OutlineButton variant='outline-secondary' type="button">Cancel</OutlineButton></Link>
-          <Dropdown>
-            <Dropdown.Toggle variant="outline-danger" id="dropdown-basic">
+          <Card border="info" style={{ width: '18rem' }}>
+            <Card.Header><h4>{this.state.favorite.list_name}</h4></Card.Header>
+            <Card.Body>
+              <Card.Title></Card.Title>
+              <Card.Text>
+                <h5>State: </h5>{this.state.favorite.state}<br/>
+                <h5>EcoRegion: </h5>{this.state.favorite.ecoregion}<br/>
+                <h5>Species: </h5>{this.state.favorite.type}<br/>
+                <h5>Common Name: </h5>{this.state.favorite.common_name}<br/>
+              </Card.Text>
+              <Link to={`/favorites-edit/${this.props.match.params.id}`}>
+                <OutlineButton variant='outline-primary' type="button">Edit List</OutlineButton></Link>
+              <Link to={'/favorites'}>
+                <OutlineButton variant='outline-secondary' type="button">Cancel</OutlineButton></Link>
+              <Dropdown>
+                <Dropdown.Toggle variant="outline-danger" id="dropdown-basic">
               Delete List
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item onClick={this.destroyList}>🛑  Permently Delete 🛑</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item onClick={this.destroyList}>🛑  Permently Delete 🛑</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Card.Body>
+          </Card>
         </div>
       )
     }
     return (
-      <div className='long'>
-        <h1>Favorites</h1>
-        {favorite}
+      <div className='Card'>
+        <Container>
+          <Row md={3}>
+            <Col>{favorite}</Col>
+          </Row>
+        </Container>
       </div>
     )
   }
