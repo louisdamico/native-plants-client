@@ -61,38 +61,42 @@ class FavoriteOne extends Component {
     if (this.state.favorite) {
       favorite = (
         <div key={this.state.favorite.id}>
-          <Card border="info" style={{ width: '18rem' }}>
-            <Card.Header><h4>{this.state.favorite.list_name}</h4></Card.Header>
-            <Card.Body>
-              <Card.Title></Card.Title>
-              <Card.Text>
-                <h5>State: </h5>{this.state.favorite.state}<br/>
-                <h5>EcoRegion: </h5>{this.state.favorite.ecoregion}<br/>
-                <h5>Species: </h5>{this.state.favorite.type}<br/>
-                <h5>Common Name: </h5>{this.state.favorite.common_name}<br/>
-              </Card.Text>
-              <Link to={`/favorites-edit/${this.props.match.params.id}`}>
-                <OutlineButton variant='outline-primary' type="button">Edit List</OutlineButton></Link>
-              <Link to={'/favorites'}>
-                <OutlineButton variant='outline-secondary' type="button">Cancel</OutlineButton></Link>
-              <Dropdown>
-                <Dropdown.Toggle variant="outline-danger" id="dropdown-basic">
-              Delete List
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item onClick={this.destroyList}>🛑  Permently Delete 🛑</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </Card.Body>
-          </Card>
+          <div className="row">
+            <div className="mx-auto mt-5">
+              <Card border="info" style={{ width: '18rem' }}>
+                <Card.Header><h4>{this.state.favorite.list_name}</h4></Card.Header>
+                <Card.Body>
+                  <Card.Title></Card.Title>
+                  <Card.Text>
+                    State: {this.state.favorite.state}<br/>
+                    EcoRegion: {this.state.favorite.ecoregion}<br/>
+                    Species: {this.state.favorite.type}<br/>
+                    Common Name: {this.state.favorite.common_name}<br/>
+                  </Card.Text>
+                  <Link to={`/favorites-edit/${this.props.match.params.id}`}>
+                    <OutlineButton variant='outline-primary' type="button">Edit List</OutlineButton></Link>
+                  <Link to={'/favorites'}>
+                    <OutlineButton variant='outline-secondary' type="button">Cancel</OutlineButton></Link>
+                  <Dropdown>
+                    <Dropdown.Toggle variant="outline-danger" id="dropdown-basic">
+                  Delete List
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item onClick={this.destroyList}>🛑  Permently Delete 🛑</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Card.Body>
+              </Card>
+            </div>
+          </div>
         </div>
       )
     }
     return (
       <div className='Card'>
         <Container>
-          <Row md={4}>
-            <Col>{favorite}</Col>
+          <Row className="justify-content-md-center">
+            <Col md='auto'className="justify-content-center">{favorite}</Col>
           </Row>
         </Container>
       </div>
