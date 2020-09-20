@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import OutlineButton from 'react-bootstrap/Button'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
@@ -51,8 +54,11 @@ class Favorite extends Component {
     }
     return (
       <div className='Card'>
-        <h1>Create New List</h1>
-        {favorite}
+        <Container>
+          <Row md={4}>
+            <Col>{favorite}</Col>
+          </Row>
+        </Container>
       </div>
     )
   }

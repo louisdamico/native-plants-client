@@ -91,7 +91,7 @@ class FavoriteOne extends Component {
     return (
       <div className='Card'>
         <Container>
-          <Row md={3}>
+          <Row md={4}>
             <Col>{favorite}</Col>
           </Row>
         </Container>
