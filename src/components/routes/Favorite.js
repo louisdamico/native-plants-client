@@ -47,7 +47,7 @@ class Favorite extends Component {
                     Common Name: {favorite.common_name}<br/>
                   </Card.Text>
                   <Link to={`/favorites/${favorite.id}`}>
-                    <OutlineButton variant='outline-primary' type="button">See List</OutlineButton></Link>
+                    <OutlineButton variant='outline-info' type="button">See List</OutlineButton></Link>
                 </Card.Body>
               </Card>
             </div>

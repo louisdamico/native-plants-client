@@ -74,7 +74,7 @@ class FavoriteOne extends Component {
                     Common Name: {this.state.favorite.common_name}<br/>
                   </Card.Text>
                   <Link to={`/favorites-edit/${this.props.match.params.id}`}>
-                    <OutlineButton variant='outline-primary' type="button">Edit List</OutlineButton></Link>
+                    <OutlineButton variant='outline-info' type="button">Edit List</OutlineButton></Link>
                   <Link to={'/favorites'}>
                     <OutlineButton variant='outline-secondary' type="button">All Lists</OutlineButton></Link>
                   <Dropdown>
