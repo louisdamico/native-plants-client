@@ -82,7 +82,7 @@ class FavoriteOne extends Component {
                   Delete List
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item onClick={this.destroyList}>🛑  Permently Delete 🛑</Dropdown.Item>
+                      <Dropdown.Item onClick={this.destroyList}>🛑  Permanently Delete 🛑</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </Card.Body>
