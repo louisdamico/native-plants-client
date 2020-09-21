@@ -29,7 +29,7 @@ I started off with a loose idea of the layout, mainly wanted it easy with minimu
 
 ### Strech Goal(s)
 
-- Allow users to choose there favorite plants by choosing a photo.
+- Allow users to choose their favorite plants by choosing a photo.
 - Allow users to access all plant info from selected card.
 
 ### Application Preview
@@ -43,12 +43,11 @@ I started off with a loose idea of the layout, mainly wanted it easy with minimu
 ## Set up and installation
 1. Download this application.
 2. Unzip the application.
-3. Move into the folder and run the command `git init`.
+3. Move into the folder.
 4. If you're on MacOS, you can install Pipenv easily with Homebrew: `$ brew install pipenv`.
 5. Run `pipenv shell` to start up your virtual environment.
 6. Run `pipenv install` to install dependencies.
 7. Run the front-end development server with `npm run start`.
-8. Run the back-end development server with `python3 manage.py runserver`.
 
 ### Technologies Used
 
