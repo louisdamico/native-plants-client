@@ -42,7 +42,7 @@ class Favorite extends Component {
                   <Card.Title></Card.Title>
                   <Card.Text>
                     State: {favorite.state}<br/>
-                    EcoRegion: {favorite.ecoregion}<br/>
+                    Grow Zone: {favorite.ecoregion}<br/>
                     Species: {favorite.type}<br/>
                     Common Name: {favorite.common_name}<br/>
                   </Card.Text>

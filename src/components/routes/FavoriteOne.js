@@ -69,14 +69,14 @@ class FavoriteOne extends Component {
                   <Card.Title></Card.Title>
                   <Card.Text>
                     State: {this.state.favorite.state}<br/>
-                    EcoRegion: {this.state.favorite.ecoregion}<br/>
+                    Grow Zone: {this.state.favorite.ecoregion}<br/>
                     Species: {this.state.favorite.type}<br/>
                     Common Name: {this.state.favorite.common_name}<br/>
                   </Card.Text>
                   <Link to={`/favorites-edit/${this.props.match.params.id}`}>
                     <OutlineButton variant='outline-primary' type="button">Edit List</OutlineButton></Link>
                   <Link to={'/favorites'}>
-                    <OutlineButton variant='outline-secondary' type="button">Cancel</OutlineButton></Link>
+                    <OutlineButton variant='outline-secondary' type="button">All Lists</OutlineButton></Link>
                   <Dropdown>
                     <Dropdown.Toggle variant="outline-danger" id="dropdown-basic">
                   Delete List
