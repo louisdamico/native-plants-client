@@ -1,3 +1,11 @@
+### Application Preview
+##### Home page
+<a href="https://imgur.com/YGgQJ3g"><img src="https://i.imgur.com/YGgQJ3g.jpg" title="source: imgur.com" /></a>
+##### Make A List
+<a href="https://imgur.com/YBj8byC"><img src="https://i.imgur.com/YBj8byC.png" title="source: imgur.com" /></a>
+#### Your Lists
+<a href="https://imgur.com/r7IKbd5"><img src="https://i.imgur.com/r7IKbd5.png" title="source: imgur.com" /></a>
+
 # Application: Native Plant Species Field App
 
 This application is a Native plant field guide designed for professionals and a DIYer of all levels.  The simplicity of the list, along with easy to use navigation will be an asset for users in an outdoor environment. Each user will be able to search by state and ecoregion to find which plant species is native to their particular area. Once they choose a location, the database will populate a list of native species for different categories; Trees, Shrubs, Plants, Flowers, Grasses, etc...  Each one will have a Picture of the species, and description and an average price.  The user then can pick their favorite ones and add it to a Client/favorite list for future reference.
@@ -31,14 +39,6 @@ I started off with a loose idea of the layout, mainly wanted it easy with minimu
 
 - Allow users to choose their favorite plants by choosing a photo.
 - Allow users to access all plant info from selected card.
-
-### Application Preview
-##### Home page
-<a href="https://imgur.com/YGgQJ3g"><img src="https://i.imgur.com/YGgQJ3g.jpg" title="source: imgur.com" /></a>
-##### Make A List
-<a href="https://imgur.com/YBj8byC"><img src="https://i.imgur.com/YBj8byC.png" title="source: imgur.com" /></a>
-#### Your Lists
-<a href="https://imgur.com/r7IKbd5"><img src="https://i.imgur.com/r7IKbd5.png" title="source: imgur.com" /></a>
 
 ## Set up and installation
 1. Download this application.
