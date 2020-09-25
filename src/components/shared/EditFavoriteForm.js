@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 import OutlineButton from 'react-bootstrap/Button'
 const EditFavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
   <div className="row">
-    <div className="col-sm-10 col-md-8 mx-auto mt-5">
+    <div className="col-sm-10 col-md-8 mx-auto mt-5 px-4">
       <h3>Edit List:</h3>
       <h4>{favorite.list_name}</h4>
       <Form onSubmit={handleSubmit}>

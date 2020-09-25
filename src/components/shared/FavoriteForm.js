@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
-// import Button from 'react-bootstrap/Button'
 import OutlineButton from 'react-bootstrap/Button'
 
 const FavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
