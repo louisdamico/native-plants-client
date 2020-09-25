@@ -5,11 +5,11 @@ import Form from 'react-bootstrap/Form'
 import OutlineButton from 'react-bootstrap/Button'
 
 const FavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
-  <div className="zone-chart col-sm-10 col-md-8 mx-auto my-5">
+  <div className="col-sm-10 col-md-8 mx-auto my-5 zone-chart">
     <div className="row">
       <div className="col-sm-10 col-md-8 mx-auto mt-5">
         <a href="https://www.pbs.org/wgbh/victorygarden/grow/primers_projects/planthardiness.html" target="blank" rel="us grow zone chart">
-          <img src="https://www.pbs.org/wgbh/victorygarden/images/knowhow/pp/planthardiness/plant_hardiness_map.gif" alt="clickable image"/>
+          <img className="img-fluid" src="https://www.pbs.org/wgbh/victorygarden/images/knowhow/pp/planthardiness/plant_hardiness_map.gif" alt="clickable image"/>
         </a><br/>
         <h3>Make New List:</h3>
         <Form onSubmit={handleSubmit}>
