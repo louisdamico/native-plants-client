@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import Form from 'react-bootstrap/Form'
-import OutlineButton from 'react-bootstrap/Button'
+// import Form from 'react-bootstrap/Form'
+import FavoriteListForm from '../shared/FavoriteListForm'
+// import OutlineButton from 'react-bootstrap/Button'
 import { withRouter } from 'react-router'
 
 class FavoriteList extends Component {
@@ -31,27 +32,19 @@ class FavoriteList extends Component {
 
   render () {
     const { favorite, updated } = this.state
-    const { handleChange } = this
+    const { handleChange, handleClick } = this
 
     if (updated) {
       return <Redirect to={'/favorites-states'} />
     }
     return (
-      <div className="col-sm-10 col-md-8 mx-auto my-5 p-4 zone-chart">
-        <div className="row">
-          <Form>
-            <h3>Make New List:</h3><br/>
-            <label>List Name</label><br/>
-            <input
-              placeholder='type list name'
-              defaultValue={favorite.list_name}
-              required
-              name='list_name'
-              onChange={handleChange}
-            /><br/>
-            <OutlineButton onClick={this.handleClick}>Start List</OutlineButton>
-          </Form>
-        </div>
+      <div>
+        <FavoriteListForm
+          favorite={favorite}
+          handleChange={handleChange}
+          handleClick={handleClick}
+          cancelPath='/'
+        />
       </div>
     )
   }
