@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar'
 
 const authenticatedOptions = (
   <Fragment>
-    <Nav.Link href='#favorites-create'> New-List </Nav.Link>
+    <Nav.Link href='#favorites-lists'> New-List </Nav.Link>
     <Nav.Link href='#favorites'> Lists </Nav.Link>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
@@ -13,7 +13,7 @@ const authenticatedOptions = (
 
 const unauthenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#/">Home</Nav.Link>
+    { /* <Nav.Link href="#/">Home</Nav.Link> */ }
     <Nav.Link href="#sign-up">Sign Up</Nav.Link>
     <Nav.Link href="#sign-in">Sign In</Nav.Link>
   </Fragment>

@@ -9,8 +9,6 @@ import OutlineButton from 'react-bootstrap/Button'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import { withRouter } from 'react-router'
-// import Typography from '@material-ui/core/Typography';
-
 import messages from '../AutoDismissAlert/messages'
 
 class FavoriteOne extends Component {
