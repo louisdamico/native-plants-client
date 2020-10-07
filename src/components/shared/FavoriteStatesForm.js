@@ -2,7 +2,7 @@ import React from 'react'
 import Form from 'react-bootstrap/Form'
 import OutlineButton from 'react-bootstrap/Button'
 
-const FavoriteStatesForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
+const FavoriteStatesForm = ({ favorite, handleSubmit, handleChange, cancelPath, handleClick }) => (
   <div className="col-sm-10 col-md-8 mx-auto my-5 p-4 zone-chart">
     <div className="row">
       <Form>
@@ -70,3 +70,4 @@ const FavoriteStatesForm = ({ favorite, handleSubmit, handleChange, cancelPath }
   </div>
 )
 export default FavoriteStatesForm
+// componentdidmount

@@ -10,7 +10,7 @@ const FavoriteListForm = ({ favorite, handleSubmit, handleChange, cancelPath }) 
         <label>List Name</label><br/>
         <input
           placeholder='type list name'
-          defaultValue={favorite.list_name}
+          defaultValue=''
           required
           name='list_name'
           onChange={handleChange}

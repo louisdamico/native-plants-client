@@ -10,13 +10,15 @@ class FavoriteStates extends Component {
     super(props)
     this.state = {
       favorite: {
-        state: ''
+        list_name: this.favorite.list_name,
+        state: this.favorite.state
       }
     }
     this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick () {
+    event.persist()
     this.setState(prevState => {
       return {
         favorite: this.state.favorite.state
