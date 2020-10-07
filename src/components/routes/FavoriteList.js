@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import { Redirect } from 'react-router-dom'
 // import Form from 'react-bootstrap/Form'
 import FavoriteListForm from '../shared/FavoriteListForm'
-// import FavoriteStatesForm from '../shared/FavoriteStatesForm'// import OutlineButton from 'react-bootstrap/Button'
+import FavoriteStatesForm from '../shared/FavoriteStatesForm'// import OutlineButton from 'react-bootstrap/Button'
 import { withRouter } from 'react-router'
 
 class FavoriteList extends Component {
@@ -11,11 +11,17 @@ class FavoriteList extends Component {
     this.state = null
   }
   render () {
-    const { handleChange } = this.props
+    const { handleChange, handleClick } = this.props
 
     return (
       <div>
         <FavoriteListForm
+          handleChange={handleChange}
+          cancelPath='/'
+        />
+        <FavoriteStatesForm
+          list_name={this.state.list_name}
+          onClick={handleClick}
           handleChange={handleChange}
           cancelPath='/'
         />
@@ -24,8 +30,3 @@ class FavoriteList extends Component {
   }
 }
 export default withRouter(FavoriteList)
-// <FavoriteStatesForm
-// onClick={handleClick}
-// handleChange={handleChange}
-// cancelPath='/'
-// />

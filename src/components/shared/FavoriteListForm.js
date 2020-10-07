@@ -5,7 +5,7 @@ import OutlineButton from 'react-bootstrap/Button'
 const FavoriteListForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
   <div className="col-sm-10 col-md-8 mx-auto my-5 p-4 zone-chart">
     <div className="row">
-      <Form>
+      <Form onClick={handleChange}>
         <h3>Make New List:</h3><br/>
         <label>List Name</label><br/>
         <input
@@ -13,7 +13,7 @@ const FavoriteListForm = ({ favorite, handleSubmit, handleChange, cancelPath }) 
           defaultValue=''
           required
           name='list_name'
-          onChange={handleChange}
+          handleChange={handleChange}
         /><br/>
         <OutlineButton onClick={handleChange}>Start List</OutlineButton>
       </Form>
