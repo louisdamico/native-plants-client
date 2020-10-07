@@ -6,8 +6,8 @@ const FavoriteStatesForm = ({ favorite, handleSubmit, handleChange, cancelPath, 
   <div className="col-sm-10 col-md-8 mx-auto my-5 p-4 zone-chart">
     <div className="row">
       <Form>
-        <h3>{favorite.list_name}</h3>
-        <Form.Group controlId="state-category" onChange={handleChange} value={favorite.state} required>
+        <h3>{favorite}</h3>
+        <Form.Group controlId="state-category" onChange={handleChange} value={favorite} required>
           <Form.Label>State</Form.Label>
           <Form.Control as="select" name="state" defaultValue='' required>
             <option value="" disabled hidden>Select State</option>
@@ -64,7 +64,7 @@ const FavoriteStatesForm = ({ favorite, handleSubmit, handleChange, cancelPath, 
             <option value="WY">Wyoming</option>
           </Form.Control>
         </Form.Group>
-        <OutlineButton onClick={this.handleClick}>Continue</OutlineButton>
+        <OutlineButton onClick={this.handleChange}>Continue</OutlineButton>
       </Form>
     </div>
   </div>

@@ -15,7 +15,7 @@ const FavoriteListForm = ({ favorite, handleSubmit, handleChange, cancelPath }) 
           name='list_name'
           onChange={handleChange}
         /><br/>
-        <OutlineButton onClick={this.handleClick}>Start List</OutlineButton>
+        <OutlineButton onClick={handleChange}>Start List</OutlineButton>
       </Form>
     </div>
   </div>
