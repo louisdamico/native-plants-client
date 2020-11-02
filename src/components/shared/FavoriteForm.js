@@ -12,7 +12,6 @@ const FavoriteForm = ({ favorite, handleSubmit, handleChange, cancelPath }) => (
         </a><br/>
         <h3>Make New List:</h3>
         <Form onSubmit={handleSubmit}>
-          <h3>{favorite.list_name}</h3>
           <h4>{favorite.state}</h4>
           <Form.Group controlId="state-category" onChange={handleChange} value={favorite.state} required>
             <Form.Label>State</Form.Label>

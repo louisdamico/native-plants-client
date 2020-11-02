@@ -8,19 +8,18 @@ import { withRouter } from 'react-router'
 class FavoriteList extends Component {
   constructor (props) {
     super(props)
-    this.state = null
+    this.state = {}
   }
   render () {
-    const { handleChange, handleClick } = this.props
+    const { handleChange, handleClick } = this.state
 
     return (
       <div>
         <FavoriteListForm
-          handleChange={handleChange}
+          onClick={handleChange}
           cancelPath='/'
         />
         <FavoriteStatesForm
-          list_name={this.state.list_name}
           onClick={handleClick}
           handleChange={handleChange}
           cancelPath='/'
@@ -30,3 +29,4 @@ class FavoriteList extends Component {
   }
 }
 export default withRouter(FavoriteList)
+// list_name={this.state.list_name}
