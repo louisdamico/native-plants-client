@@ -58,6 +58,17 @@ class FavoriteCreate extends Component {
         variant: 'danger'
       }))
   }
+  // handleGetDate = event => {
+  //   event.preventDefault()
+  //   axios({
+  //     url: 'https://trefle.io/api/v1/plants?token=3BR9oc6rnNijWhM5QcokyUENfAYuUHilzEF3xLy6AxI&page=2',
+  //     method: 'GET',
+  //     data: {
+  //       family_common_name: '',
+  //       image_url: ''
+  //     }
+  //   })
+  // }
   render () {
     const { favorite, createdId } = this.state
     const { handleChange, handleSubmit } = this
