@@ -5,7 +5,7 @@ class Home extends Component {
     return (
       <div className="home">
         <h2>Native Plants</h2>
-        <h5>Log in to get started storing clients lists!</h5>
+        <h4>Log in to get started!</h4>
       </div>
     )
   }

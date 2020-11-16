@@ -8,15 +8,39 @@ import { withRouter } from 'react-router'
 class FavoriteList extends Component {
   constructor (props) {
     super(props)
-    this.state = {}
+    this.state = {
+      favorite: {
+        list_name: '',
+        state: '',
+        ecoregion: '',
+        type: '',
+        common_name: ''
+      }
+    }
   }
+
+  handleChange = event => {
+    event.persist()
+
+    this.setState(prevState => {
+      const updatedField = { [event.target.name]: event.target.value }
+
+      const editedPost = Object.assign({}, prevState.favorite, updatedField)
+      return { favorite: editedPost }
+    })
+  }
+  // const whatever = () {
+  //   if else
+  // }
   render () {
-    const { handleChange, handleClick } = this.state
+    const { handleChange, handleClick, favorite } = this.state
 
     return (
       <div>
         <FavoriteListForm
-          onClick={handleChange}
+          onChange={handleChange}
+          favorite={favorite}
+          // show={whatever}
           cancelPath='/'
         />
         <FavoriteStatesForm

@@ -5,6 +5,7 @@ import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import { withRouter } from 'react-router'
 import messages from '../AutoDismissAlert/messages'
+import FavoriteListForm from '../shared/FavoriteListForm'
 
 class FavoriteCreate extends Component {
   constructor (props) {
@@ -79,6 +80,11 @@ class FavoriteCreate extends Component {
 
     return (
       <div>
+        <FavoriteListForm
+          favorite={favorite}
+          handleChange={handleChange}
+          // onClick={handleClick}
+        />
         <FavoriteForm
           favorite={favorite}
           handleChange={handleChange}
